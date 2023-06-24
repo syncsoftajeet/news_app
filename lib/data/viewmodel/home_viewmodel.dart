@@ -48,8 +48,11 @@ class HomeViewModel extends GetxController{
     _repository.getBannerHeadline().then((value){
       rxBannerRequestStatus.value = Status.COMPLETE;
       bannerHeadlinelist.value = value;
+      print("--------------------");
+      print(value.articles?.length);
     }).onError((error, stackTrace){
       rxBannerRequestStatus.value = Status.ERROR;
+      print("---------error-----------");
     });
     bannerloading.value = false;
   }
